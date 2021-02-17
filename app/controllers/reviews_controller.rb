@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to restaurant_path(@restaurant)
     else
-      render :new
+      render 'restaurants/show'
     end
   end
 
@@ -19,6 +19,6 @@ class ReviewsController < ApplicationController
   end
 
   def review_params
-    params.require(:review).permit(:rating, :content, :restaurant_id)
+    params.require(:review).permit(:rating, :content)
   end
 end
