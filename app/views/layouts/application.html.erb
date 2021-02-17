@@ -13,6 +13,12 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-light bg-dark">
+      <div class="container">
+        <%= link_to 'All Restaurants', restaurants_path, class: "btn btn-success" %>
+        <%= link_to 'Add New Restaurant', new_restaurant_path, class: "btn btn-outline-success" %>
+      </div>
+    </nav>
     <div class="container my-3">
       <%= yield %>
     </div>

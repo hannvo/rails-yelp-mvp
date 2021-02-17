@@ -6,17 +6,11 @@
   <p><%= @restaurant.address %></p>
 </div>
 
-
-<%= link_to 'Back', restaurants_path, class: "btn btn-outline-success" %>
-
 <hr>
-  <h3>New Review for <%= @restaurant.name %></h3>
 
-  <%= simple_form_for [@restaurant, @review] do |f| %>
-    <%= f.input :rating, collection: 0..5 %>
-    <%= f.input :content %>
-    <%= f.submit %>
-  <% end %>
+  <h3>New Review for <%= @restaurant.name %></h3>
+  <%= render "review_form", restaurant: @restaurant, review: @review %>
+
 <hr>
 
 <h3> <%= 'Review'.pluralize(@restaurant.reviews.count) %> for <%= @restaurant.name %> </h3>
